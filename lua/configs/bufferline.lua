@@ -12,7 +12,7 @@ bufferline.setup(astronvim.user_plugin_opts("plugins.bufferline", {
     close_icon = astronvim.get_icon "NeovimClose",
     max_name_length = 14,
     max_prefix_length = 13,
-    tab_size = 20,
+    tab_size = 0,
     separator_style = "thin",
   },
 }))

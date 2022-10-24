@@ -183,8 +183,9 @@ local astro_plugins = {
     after = "telescope.nvim",
     disable = vim.fn.executable "make" + vim.fn.executable "cmake" == 0,
     run = vim.fn.executable "cmake" == 1
-        and "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-      or "make",
+        and
+        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+        or "make",
     config = function() require("telescope").load_extension "fzf" end,
   },
 
@@ -255,6 +256,23 @@ local astro_plugins = {
     event = "BufWritePost",
     config = function() require "configs.session_manager" end,
   },
+  ["machakann/vim-sandwich"] = {},
+  ["catppuccin/nvim"] = {
+    config = function() require "configs.catppuccin" end,
+  },
+  ["tweekmonster/django-plus.vim"] = {},
+  ["rest-nvim/rest.nvim"] = {
+    vim.api.nvim_set_keymap(
+      "n",
+      "<Leader>m",
+      "<Plug>RestNvim",
+      { noremap = true, silent = true }
+    ),
+  },
+  ["declancm/cinnamon.nvim"] = {
+    config = function() require "configs.cinnamon" end,
+  },
+  ["metakirby5/codi.vim"] = {},
 }
 
 if astronvim.updater.snapshot then
