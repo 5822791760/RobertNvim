@@ -123,7 +123,7 @@ local astro_plugins = {
   },
 
   -- Buffer completion source
-  ["hrsh7th/cmp-buffer"] = {
+  ["hrs3h7th/cmp-buffer"] = {
     after = "nvim-cmp",
     config = function() astronvim.add_user_cmp_source "buffer" end,
   },
@@ -269,9 +269,9 @@ local astro_plugins = {
       { noremap = true, silent = true }
     ),
   },
-  -- ["declancm/cinnamon.nvim"] = {
-  --   config = function() require "configs.cinnamon" end,
-  -- },
+  ["declancm/cinnamon.nvim"] = {
+    config = function() require "configs.cinnamon" end,
+  },
   ["metakirby5/codi.vim"] = {},
 }
 
