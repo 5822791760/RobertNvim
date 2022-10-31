@@ -36,7 +36,7 @@ local config = {
     default_theme = function(highlights) -- or a function that returns a new table of colors to set
       local C = require "default_theme.colors"
 
-      highlights.Normal = { fg = C.fg, bg = C.bg }
+      highlights.Normal = { fg = C.NONE, bg = C.NONE }
       return highlights
     end,
   },
@@ -184,10 +184,11 @@ local config = {
       -- ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       -- ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       -- ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-      ["<leader>n"] = { ":!python3 %<CR>" },
       ["<leader>r"] = { 'viwy/\\V<C-r>"<CR>Ncgn' },
       ["<S-l>"] = { "L" },
       ["<S-h>"] = { "H" },
+      ["<C-d>"] = { "^M<C-d>" },
+      ["<C-u>"] = { "^M<C-u>" },
       ["'"] = { "'" },
       ["<leader>h"] = { "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer tab" },
       ["<leader>l"] = { "<cmd>BufferLineCyclePrev<cr>", desc = "Previous buffer tab" },
@@ -311,7 +312,7 @@ local config = {
     vim.cmd [[highlight Cursor guibg=#C1C1C1]]
     vim.cmd [[highlight iCursor guibg=#F7F7F7]]
     vim.cmd [[highlight vCursor guibg=#FF53E2]]
-    vim.cmd [[set guicursor=n:blinkwait175-blinkoff150-blinkon175-Cursor]]
+    vim.cmd [[set guicursor=n:Cursor]]
     vim.cmd [[set guicursor+=v:vCursor]]
     vim.cmd [[set guicursor+=i:block-iCursor]]
     vim.cmd [[set nohlsearch]]

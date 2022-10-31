@@ -269,9 +269,9 @@ local astro_plugins = {
       { noremap = true, silent = true }
     ),
   },
-  ["declancm/cinnamon.nvim"] = {
-    config = function() require "configs.cinnamon" end,
-  },
+  -- ["declancm/cinnamon.nvim"] = {
+  --   config = function() require "configs.cinnamon" end,
+  -- },
   ["metakirby5/codi.vim"] = {},
 }
 
